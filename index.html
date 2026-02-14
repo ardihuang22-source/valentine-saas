@@ -2,29 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kedai Kue Wijaya</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Hey Sayang 💕</h1>
-    <h2>Do you love Ardi? 😏</h2>
+    <div class="container">
+        <h1>Hey Sayang 💕</h1>
+        <h2>Do you love Ardi?</h2>
 
-    <div id="countdown">Music starts in 10 seconds...</div>
+        <div id="countdown">Music starts in 10 seconds...</div>
 
-    <button id="yesBtn">YES 💖</button>
-    <button id="noBtn">NO 😢</button>
+        <div class="btn-group">
+            <button id="yesBtn">YES 💖</button>
+            <button id="noBtn">NO 😢</button>
+        </div>
+    </div>
 
-    <!-- Local Music (No Ads) -->
-    <audio id="bgMusic" loop>
-        <source src="a-thousand-years.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- Popup -->
-    <div class="popup" id="popupMessage">
+    <div id="popup" class="popup">
         💕 Happy Valentine Sayang 💕 <br><br>
         Where is my chocolate 🍫 and flowers 🌷 ?
     </div>
+
+    <canvas id="fireworksCanvas"></canvas>
+
+    <audio id="bgMusic" loop>
+        <source src="a-thousand-years.mp3" type="audio/mpeg">
+    </audio>
 
     <script src="script.js"></script>
 </body>
