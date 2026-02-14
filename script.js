@@ -42,3 +42,27 @@ setInterval(() => {
 
     setTimeout(() => heart.remove(), 5000);
 }, 400);
+const music = document.getElementById("bgMusic");
+const countdownEl = document.getElementById("countdown");
+
+let timeLeft = 10;
+let countdownFinished = false;
+
+// Countdown
+const countdown = setInterval(() => {
+    timeLeft--;
+    countdownEl.innerHTML = "Music starts in " + timeLeft + " seconds...";
+
+    if (timeLeft <= 0) {
+        clearInterval(countdown);
+        countdownEl.innerHTML = "Click anywhere to start music 🎵";
+        countdownFinished = true;
+    }
+}, 1000);
+
+// Play only after user click
+document.addEventListener("click", function () {
+    if (countdownFinished) {
+        music.play().catch(err => console.log("Autoplay blocked:", err));
+    }
+}, { once: true });
